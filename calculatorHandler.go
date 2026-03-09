@@ -17,7 +17,7 @@ type Output struct {
 	Error  string  `json:"error,omitempty"`
 }
 
-func handler(w http.ResponseWriter, req *http.Request) {
+func calculatorHandler(w http.ResponseWriter, req *http.Request) {
 
 	if req.Method != "POST" {
 		http.Error(w, "Not POST method", http.StatusMethodNotAllowed)
@@ -52,7 +52,6 @@ func handler(w http.ResponseWriter, req *http.Request) {
 			result.Result = input.FirstNumber / input.SecondNumber
 		}
 	default:
-		result.Result = 0
 		result.Error = "Unknown sign: " + input.Sign
 	}
 

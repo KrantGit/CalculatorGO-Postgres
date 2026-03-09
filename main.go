@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/api/calculator", calculatorHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }
