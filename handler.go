@@ -47,7 +47,6 @@ func handler(w http.ResponseWriter, req *http.Request) {
 		result.Result = input.FirstNumber * input.SecondNumber
 	case "/":
 		if input.SecondNumber == 0 {
-			result.Result = 0
 			result.Error = "Division by zero"
 		} else {
 			result.Result = input.FirstNumber / input.SecondNumber
@@ -64,4 +63,5 @@ func handler(w http.ResponseWriter, req *http.Request) {
 	}
 
 	insert_table(input, result)
+
 }
